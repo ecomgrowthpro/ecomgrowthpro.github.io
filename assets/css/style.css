@@ -19,7 +19,7 @@
   --line-dark: rgba(141, 177, 255, 0.18);
   --line-light: rgba(22, 32, 44, 0.10);
 
-  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --serif: "Plus Jakarta Sans", "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; /* headings */
   --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --wrap: 1200px;
@@ -108,8 +108,6 @@ h4 { font-family: var(--sans); font-weight: 600; font-size: 1rem; letter-spacing
 }
 .btn--gold { background: var(--blue); color: var(--white); }
 .btn--gold:hover { background: var(--blue-hover); }
-.section--dark .btn--gold, .hero .btn--gold, .cta-band .btn--gold, .site-header .btn--gold, .mobile-menu .btn--gold, .page-hero .btn--gold { background: var(--gold); }
-.section--dark .btn--gold:hover, .hero .btn--gold:hover, .cta-band .btn--gold:hover, .site-header .btn--gold:hover, .mobile-menu .btn--gold:hover { background: var(--blue); }
 .btn--ghost { border-color: rgba(245, 242, 235, .35); color: var(--ivory); background: transparent; }
 .btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
 .btn--dark { background: var(--charcoal); color: var(--ivory); }
@@ -456,7 +454,7 @@ body.menu-open { overflow: hidden; }
 .site-footer a { text-decoration: none; color: #A3AFC2; transition: color .2s; }
 .site-footer a:hover { color: var(--gold); }
 .footer-brand p { max-width: 36ch; margin-top: 16px; }
-.footer-bottom { border-top: 1px solid rgba(79,134,247,.14); padding: 24px 0 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .85rem; color: #6F7C91; }
+.footer-bottom { border-top: 1px solid rgba(79,134,247,.14); padding: 24px 0 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .85rem; color: #8E9AAF; }
 
 /* ---------- About ---------- */
 .about-grid { display: grid; gap: 56px; }
@@ -872,3 +870,21 @@ body.menu-open { overflow: hidden; }
 .dots button[aria-selected="true"] { width: 28px; background: var(--green); }
 @media (prefers-reduced-motion: reduce) { .slide { transition: none; transform: none; } }
 .quote-md { font-size: clamp(1.4rem, 2.6vw, 2.1rem); max-width: 34ch; }
+
+/* ===================== v5: Plus Jakarta Sans headings + audit fixes ===================== */
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.12; }
+.display { font-weight: 800; letter-spacing: -0.035em; line-height: 1.06; }
+h3 { letter-spacing: -0.015em; }
+.hero h1 em, .page-hero h1 em { font-style: normal; font-weight: 800; color: var(--gold-soft); }
+.logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.03em; }
+.logo i { font-style: normal; color: var(--green); }
+.quote-lg { font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
+.ach .year, .svc-item .idx { font-style: normal; font-weight: 700; }
+.kpi b, .stats-row b { font-weight: 700; letter-spacing: -0.02em; }
+.faq summary { font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; }
+.pull { font-style: normal; font-weight: 600; letter-spacing: -0.015em; }
+.portrait figcaption b { font-weight: 700; }
+.site-footer .f-head { font-family: var(--sans); font-weight: 600; font-size: .95rem; color: var(--ivory); margin: 0 0 16px; letter-spacing: 0; line-height: 1.4; }
+.btn--gold:focus-visible { outline-color: var(--gold-soft); }
+.aside-title { font-size: clamp(1.3rem, 1.8vw, 1.55rem); margin-bottom: 24px; }
+.display { font-size: clamp(2.3rem, 4.4vw, 3.75rem); }
