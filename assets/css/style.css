@@ -807,3 +807,22 @@ body.menu-open { overflow: hidden; }
 .mini-collage .collage-item { height: auto; aspect-ratio: 4 / 5; }
 .duo-card .collage-item .photo { aspect-ratio: auto; }
 .mini-collage .collage-item { aspect-ratio: 16 / 27; }
+
+/* ===================== v4: logo green as secondary accent ===================== */
+:root {
+  --green: #00C065;       /* from the EcomGrowthPro logo; use on dark backgrounds and fills */
+  --green-text: #078A4A;  /* darker green for text and icons on white */
+}
+/* Checkmarks */
+.checklist li svg, .duo-body li svg { color: var(--green-text); }
+.section--dark .checklist li svg { color: var(--green); }
+/* Result numbers */
+.stats-row b { color: var(--green-text); }
+.section--dark .stats-row b { color: var(--green); }
+/* Award badges */
+.award-badge i { background: var(--green); color: #fff; }
+/* Hero trust icon and TikTok badge hover */
+.hero-trust svg { stroke: var(--green); }
+.hero-social:hover { border-color: var(--green); }
+/* Process step dots and labels stay blue; growth arrow icon in service grid goes green */
+.why:last-child svg { color: var(--green-text); }
