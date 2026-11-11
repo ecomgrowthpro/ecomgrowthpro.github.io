@@ -967,3 +967,11 @@ h3 { letter-spacing: -0.015em; }
 html { background: #091425; overscroll-behavior-y: none; }
 body { background: var(--ivory); overflow-x: hidden; }
 @supports (overflow: clip) { body { overflow-x: clip; } }
+
+/* Mobile menu: smaller, tidier */
+.mobile-menu { padding: 16px var(--gutter) 28px; }
+.mobile-menu a.m-link { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; letter-spacing: 0; padding: 13px 4px; }
+.mobile-menu a.m-link[aria-current="page"] { color: var(--gold-soft); }
+.mobile-menu .btn { margin-top: 20px; padding: 13px 20px; font-size: .95rem; }
+.mobile-menu .m-contact { padding-top: 20px; font-size: .9rem; }
+.mobile-menu .text-link { color: var(--gold-soft); }
