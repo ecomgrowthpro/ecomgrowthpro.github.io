@@ -6,7 +6,8 @@
 const SITE = {
   email: "extraordinaryexpert45@gmail.com", // your business email
   whatsapp: "2348142834890",                // WhatsApp number, country code first, digits only
-  whatsappDisplay: "+234 814 283 4890"      // how the number is shown on the page
+  whatsappDisplay: "+234 814 283 4890",     // how the number is shown on the page
+  fiverr: "https://www.fiverr.com/etsy_growth_pro"  // your Fiverr profile
 };
 
 (function () {
@@ -22,6 +23,11 @@ const SITE = {
     el.target = "_blank";
     el.rel = "noopener";
     if (el.hasAttribute("data-show")) el.textContent = SITE.whatsappDisplay;
+  });
+  document.querySelectorAll("[data-fiverr]").forEach(function (el) {
+    el.href = SITE.fiverr;
+    el.target = "_blank";
+    el.rel = "noopener";
   });
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
