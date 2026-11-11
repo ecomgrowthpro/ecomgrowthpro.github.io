@@ -63,7 +63,7 @@ const SITE = {
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && document.body.classList.contains("menu-open")) { setOpen(false); toggle.focus(); }
     });
-    window.addEventListener("resize", function () { if (window.innerWidth >= 1200) setOpen(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth >= 1280) setOpen(false); });
   }
 
   /* Portfolio filters */
