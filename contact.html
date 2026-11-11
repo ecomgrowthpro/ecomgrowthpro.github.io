@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Book a Consultation | GrowWithJoshua</title>
+<meta name="description" content="Tell Ayomide Joshua about your online store and book an e-commerce consultation by email or WhatsApp.">
+<meta property="og:title" content="Contact | Book a Consultation | GrowWithJoshua">
+<meta property="og:description" content="Tell Ayomide Joshua about your online store and book an e-commerce consultation by email or WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#171A18">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="GrowWithJoshua home">GrowWith<span>Joshua</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="platforms.html">Platforms</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul>
+    </nav>
+    <a class="btn btn--gold nav-cta" href="contact.html">Let's Grow Your Store</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"><span class="label">Menu</span><span class="bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Mobile"><a class="m-link" href="index.html">Home</a><a class="m-link" href="about.html">About</a><a class="m-link" href="services.html">Services</a><a class="m-link" href="platforms.html">Platforms</a><a class="m-link" href="portfolio.html">Portfolio</a><a class="m-link" href="achievements.html">Achievements</a><a class="m-link" href="contact.html" aria-current="page">Contact</a></nav>
+  <a class="btn btn--gold" href="contact.html">Let's Grow Your Store</a>
+  <div class="m-contact">
+    <p>Prefer to chat? <a data-whatsapp href="#" class="text-link">Message on WhatsApp</a></p>
+  </div>
+</div>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+    <h1>Let's grow your store.</h1>
+    <p class="lede">Tell me a little about your business. I'll reply with honest thoughts and suggest the best next step, usually within one working day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <form class="form" id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <p class="err">Enter your name so Joshua knows who to reply to.</p>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="err">Enter a valid email address, like name@example.com.</p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="store">Store link <span class="opt">(optional)</span></label>
+          <input id="store" name="store" type="url" placeholder="https://" autocomplete="url">
+        </div>
+        <div class="field">
+          <label for="platform">Platform</label>
+          <select id="platform" name="platform">
+            <option value="">Not sure yet</option>
+            <option>Shopify</option><option>Etsy</option><option>Wix</option><option>Squarespace</option>
+            <option>WooCommerce</option><option>BigCommerce</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="font-weight:600;font-size:.9rem;margin-bottom:10px;padding:0">What do you need help with? <span class="opt" style="color:var(--muted);font-weight:400">(choose any)</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="services" value="New store build"><span>New store build</span></label>
+          <label><input type="checkbox" name="services" value="Store redesign"><span>Store redesign</span></label>
+          <label><input type="checkbox" name="services" value="SEO"><span>SEO</span></label>
+          <label><input type="checkbox" name="services" value="Marketing & ads"><span>Marketing &amp; ads</span></label>
+          <label><input type="checkbox" name="services" value="More sales / conversion"><span>More sales</span></label>
+          <label><input type="checkbox" name="services" value="Store audit"><span>Store audit</span></label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="message">Tell me about your store</label>
+        <textarea id="message" name="message" placeholder="What do you sell, what's working, and what would you like to improve?" required></textarea>
+        <p class="err">Add a short message so Joshua can understand what you need.</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--dark" type="submit" value="email">Send by email</button>
+        <button class="btn btn--line" type="submit" value="whatsapp">Send on WhatsApp</button>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <aside class="contact-aside">
+      <h3>Other ways to reach me</h3>
+      <ul>
+        <li><small>Email</small><a data-email data-show href="#">Email</a></li>
+        <li><small>WhatsApp</small><a data-whatsapp data-show href="#">WhatsApp</a></li>
+        <li><small>Working with</small><span>Store owners worldwide, remotely</span></li>
+        <li><small>Response time</small><span>Usually within one working day</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--ivory2">
+  <div class="wrap">
+    <div class="section-head"><h2>Common questions</h2></div>
+    <div class="faq">
+      <details><summary>Do you work with brand-new stores?</summary><p>Yes. I help with everything from choosing a platform and setting up the store to launching your first marketing campaigns.</p></details>
+      <details><summary>My store already exists. Can you just improve it?</summary><p>Absolutely. Many projects start with an audit of an existing store, followed by focused improvements to design, SEO, speed or conversion.</p></details>
+      <details><summary>Which platforms do you work with?</summary><p>Shopify, Etsy, Wix, Squarespace, WooCommerce and BigCommerce. If you're unsure which is right for you, I'll help you decide.</p></details>
+      <details><summary>How much does a project cost?</summary><p>It depends on what your store needs. After our first conversation I'll send a clear proposal with scope, timeline and price, with no hidden extras.</p></details>
+      <details><summary>Do you work with clients outside my country?</summary><p>Yes. I work remotely with store owners in different countries and time zones.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">GrowWith<span>Joshua</span></a>
+        <p>Your store has potential. Let's turn it into performance.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Joshua</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="platforms.html">Platforms</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#design">Store design &amp; development</a></li>
+          <li><a href="services.html#seo">Optimization &amp; SEO</a></li>
+          <li><a href="services.html#marketing">Marketing &amp; advertising</a></li>
+          <li><a href="services.html#cro">Conversion &amp; sales growth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a data-email data-show href="#">Email</a></li>
+          <li><a data-whatsapp href="#">WhatsApp</a></li>
+          <li><a href="contact.html">Book a consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> GrowWithJoshua. Founded by Ayomide Joshua.</span>
+      <span>Platform names are trademarks of their owners. No official partnership is implied.</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" data-whatsapp href="#" aria-label="Chat on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+</a>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
