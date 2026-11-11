@@ -979,3 +979,4 @@ body { background: var(--ivory); overflow-x: hidden; }
 .mobile-menu .btn { margin-top: 16px; padding: 12px 18px; font-size: .92rem; }
 .menu-toggle { padding: 8px 12px; font-size: .85rem; }
 .mobile-menu .m-book { margin: 0 0 12px; order: -1; }
+.logo img { width: 42px; height: 42px; margin-right: -4px; }
