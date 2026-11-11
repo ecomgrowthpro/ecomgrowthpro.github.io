@@ -978,3 +978,4 @@ body { background: var(--ivory); overflow-x: hidden; }
 .mobile-menu a.m-link { font-size: .98rem; padding: 11px 4px; }
 .mobile-menu .btn { margin-top: 16px; padding: 12px 18px; font-size: .92rem; }
 .menu-toggle { padding: 8px 12px; font-size: .85rem; }
+.mobile-menu .m-book { margin: 0 0 12px; order: -1; }
