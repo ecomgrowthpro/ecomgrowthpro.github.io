@@ -981,3 +981,10 @@ body { background: var(--ivory); overflow-x: hidden; }
 .mobile-menu .m-book { margin: 0 0 12px; order: -1; }
 .logo img { width: 42px; height: 42px; margin-right: -4px; }
 .logo img { width: auto; height: 40px; margin-right: 2px; } .footer-logo { width: 240px; height: auto; }
+/* Real Fiverr icon */
+img.fi { width: 40px; height: 40px; border-radius: 50%; display: block; }
+img.fi-dot { width: 36px; height: 36px; border-radius: 50%; display: block; }
+@media (max-width: 640px) {
+  .fiverr-float { background: transparent; box-shadow: none; padding: 0; width: 54px; }
+  .fiverr-float img.fi { width: 54px; height: 54px; box-shadow: 0 12px 28px -8px rgba(0,0,0,.45); border-radius: 50%; }
+}
