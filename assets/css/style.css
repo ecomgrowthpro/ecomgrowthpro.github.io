@@ -871,3 +871,4 @@ body.menu-open { overflow: hidden; }
 .dots button { width: 10px; height: 10px; border-radius: 10px; border: 0; padding: 0; background: rgba(255,255,255,.25); cursor: pointer; transition: width .3s var(--ease), background .3s; }
 .dots button[aria-selected="true"] { width: 28px; background: var(--green); }
 @media (prefers-reduced-motion: reduce) { .slide { transition: none; transform: none; } }
+.quote-md { font-size: clamp(1.4rem, 2.6vw, 2.1rem); max-width: 34ch; }
