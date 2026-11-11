@@ -129,9 +129,9 @@
   <div class="wrap">
     <div class="section-head section-head--split">
       <h2>Real clients. Real results.</h2>
-      <p class="lede muted">Don't just take my word for it. Here's a client's Etsy shop dashboard, and a client explaining what working together was like.</p>
+      <p class="lede muted">Don't just take my word for it. Here's a recording of a client's Etsy shop dashboard.</p>
     </div>
-    <div class="proof-duo">
+    <div class="proof-single">
       <article class="media-card">
         <video controls playsinline preload="none" poster="assets/img/etsy-client-sales-poster.jpg"><source src="assets/video/etsy-client-sales.mp4" type="video/mp4"></video>
         <div class="media-body">
@@ -146,42 +146,70 @@
           </div>
         </div>
       </article>
-      <article class="media-card">
-        <video controls playsinline preload="none" poster="assets/img/client-testimonial-poster.jpg"><source src="assets/video/client-testimonial.mp4" type="video/mp4"></video>
-        <div class="media-body">
-          <span class="label">Client testimonial</span>
-          <h3>"Here's how Joshua helped my business"</h3>
-          <p>A client shares, in her own words, her experience of working with me and the difference it made to her store.</p>
-        </div>
-      </article>
     </div>
   </div>
 </section>
 
-<section class="section section--dark">
+<section class="section section--dark reviews" aria-labelledby="reviews-title">
   <div class="wrap">
     <div class="section-head section-head--split">
-      <h2>Sound familiar?</h2>
-      <p class="lede">These are the problems store owners bring to me most often. Every one of them can be fixed.</p>
-    </div>
-    <div class="problems">
-      <div class="problem-col">
-        <h3><span class="pill pill--shopify">Shopify</span></h3>
-        <div class="problem"><b>"I get visitors, but hardly anyone buys."</b><span>Product pages, trust signals and checkout need work. This is conversion optimization.</span></div>
-        <div class="problem"><b>"My store looks like every other template."</b><span>A custom theme and brand styling make your store look credible and memorable.</span></div>
-        <div class="problem"><b>"My store is slow and full of apps."</b><span>An app clean-up and speed fixes make pages load fast on mobile.</span></div>
-        <div class="problem"><b>"I'm spending on ads with nothing to show for it."</b><span>Better targeting, creative and landing pages, with tracking set up properly.</span></div>
+      <h2 id="reviews-title">What clients say</h2>
+      <div>
+        <p class="lede">Reviews from store owners I've worked with on Fiverr and beyond.</p>
+        <a class="rating-badge" data-fiverr href="https://www.fiverr.com/etsy_growth_pro">
+          <span class="fi-dot" aria-hidden="true">fi</span>
+          <span><b><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 on Fiverr</b>Read all reviews on my Fiverr profile</span>
+        </a>
       </div>
-      <div class="problem-col">
-        <h3><span class="pill pill--etsy">Etsy</span></h3>
-        <div class="problem"><b>"My listings don't show up in Etsy search."</b><span>Keyword research, titles, tags and attributes help Etsy match you to buyers.</span></div>
-        <div class="problem"><b>"I get views and favourites, but few sales."</b><span>Photos, descriptions, pricing and reviews need to close the deal.</span></div>
-        <div class="problem"><b>"I just opened my shop and have no sales yet."</b><span>A launch plan: set up the shop well, optimize the first listings, then drive traffic.</span></div>
-        <div class="problem"><b>"Etsy Ads are eating my profit."</b><span>Focus ad spend on the listings and keywords that actually convert.</span></div>
+    </div>
+
+    <div class="slider" data-slider aria-roledescription="carousel" aria-label="Client reviews">
+      <div class="slides" aria-live="polite">
+        <!--
+          HOW TO ADD A REVIEW: copy one <article class="slide"> block, change the
+          words, name and country, and keep it to the client's exact words.
+        -->
+        <article class="slide slide--video" aria-roledescription="slide">
+          <video controls playsinline preload="none" poster="assets/img/client-testimonial-poster.jpg"><source src="assets/video/client-testimonial.mp4" type="video/mp4"></video>
+          <div class="slide-text">
+            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p class="quote-lg">A client explains, in her own words, how working with me helped her business.</p>
+            <p class="who"><b>Video testimonial</b>Online store owner</p>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote class="quote-lg">&ldquo;Joshua exceeded expectations.&rdquo;</blockquote>
+          <p class="context">This client came to me after a previous marketer's work had hurt their store, and hired me to correct the mistakes and fix the store.</p>
+          <p class="who"><b>kaylondonbeauty</b>Fiverr client, United States</p>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote class="quote-lg">&ldquo;Awesome work!!&rdquo;</blockquote>
+          <p class="context">The same client, on a later order. They also said they'll be recommending me.</p>
+          <p class="who"><b>kaylondonbeauty</b>Fiverr client, United States</p>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote class="quote-lg" lang="it">&ldquo;Sono fiducioso.&rdquo;</blockquote>
+          <p class="context">&ldquo;I'm confident.&rdquo; (translated from Italian)</p>
+          <p class="who"><b>miky63</b>Fiverr client, Italy</p>
+        </article>
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-btn" data-prev aria-label="Previous review"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3L5 8l5 5"/></svg></button>
+        <div class="dots" role="tablist" aria-label="Choose a review"></div>
+        <button class="slider-btn" data-next aria-label="Next review"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg></button>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <section class="section">
   <div class="wrap">
@@ -214,6 +242,31 @@
         <p>Fixing where visitors drop off, so existing traffic turns into more orders.</p>
         <span class="text-link">Learn more</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap">
+    <div class="section-head section-head--split">
+      <h2>Sound familiar?</h2>
+      <p class="lede">These are the problems store owners bring to me most often. Every one of them can be fixed.</p>
+    </div>
+    <div class="problems">
+      <div class="problem-col">
+        <h3><span class="pill pill--shopify">Shopify</span></h3>
+        <div class="problem"><b>"I get visitors, but hardly anyone buys."</b><span>Product pages, trust signals and checkout need work. This is conversion optimization.</span></div>
+        <div class="problem"><b>"My store looks like every other template."</b><span>A custom theme and brand styling make your store look credible and memorable.</span></div>
+        <div class="problem"><b>"My store is slow and full of apps."</b><span>An app clean-up and speed fixes make pages load fast on mobile.</span></div>
+        <div class="problem"><b>"I'm spending on ads with nothing to show for it."</b><span>Better targeting, creative and landing pages, with tracking set up properly.</span></div>
+      </div>
+      <div class="problem-col">
+        <h3><span class="pill pill--etsy">Etsy</span></h3>
+        <div class="problem"><b>"My listings don't show up in Etsy search."</b><span>Keyword research, titles, tags and attributes help Etsy match you to buyers.</span></div>
+        <div class="problem"><b>"I get views and favourites, but few sales."</b><span>Photos, descriptions, pricing and reviews need to close the deal.</span></div>
+        <div class="problem"><b>"I just opened my shop and have no sales yet."</b><span>A launch plan: set up the shop well, optimize the first listings, then drive traffic.</span></div>
+        <div class="problem"><b>"Etsy Ads are eating my profit."</b><span>Focus ad spend on the listings and keywords that actually convert.</span></div>
+      </div>
     </div>
   </div>
 </section>

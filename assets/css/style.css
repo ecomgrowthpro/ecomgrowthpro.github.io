@@ -826,3 +826,48 @@ body.menu-open { overflow: hidden; }
 .hero-social:hover { border-color: var(--green); }
 /* Process step dots and labels stay blue; growth arrow icon in service grid goes green */
 .why:last-child svg { color: var(--green-text); }
+
+/* ===================== Reviews slideshow ===================== */
+.proof-single { max-width: 760px; }
+.rating-badge {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; text-decoration: none;
+  color: #AEB9CA; font-size: .88rem; line-height: 1.35;
+  border: 1px solid var(--line-dark); border-radius: 40px; padding: 8px 18px 8px 8px;
+  transition: border-color .25s var(--ease);
+}
+.rating-badge:hover { border-color: #1DBF73; }
+.rating-badge b { display: block; color: var(--white); font-weight: 600; }
+.rating-badge .fi-dot { width: 36px; height: 36px; border-radius: 50%; background: #1DBF73; color: #fff; display: grid; place-items: center; font-weight: 700; }
+.stars { color: #FFB33E; letter-spacing: 2px; font-size: 1rem; }
+.rating-badge .stars { font-size: .85rem; letter-spacing: 1px; margin-right: 4px; }
+
+.slider { position: relative; }
+.slides { position: relative; overflow: hidden; border-radius: 10px; background: var(--charcoal-2); border: 1px solid var(--line-dark); min-height: 340px; }
+.slide {
+  position: absolute; inset: 0; padding: clamp(32px, 5vw, 64px);
+  display: flex; flex-direction: column; justify-content: center; gap: 18px;
+  opacity: 0; visibility: hidden; transform: translateX(24px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease), visibility 0s .5s;
+}
+.slide.is-active { position: relative; opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.slide.is-leaving { transform: translateX(-24px); }
+.quote-lg { font-family: var(--serif); font-size: clamp(1.6rem, 3.4vw, 2.6rem); line-height: 1.25; margin: 0; color: var(--white); max-width: 26ch; }
+.slide .context { color: #AEB9CA; max-width: 60ch; margin: 0; }
+.slide .who { margin: 8px 0 0; color: #8C99AD; font-size: .92rem; }
+.slide .who b { display: block; color: var(--white); font-size: 1rem; }
+.slide--video { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 860px) { .slide--video { grid-template-columns: 1.2fr 1fr; } }
+.slide--video video { width: 100%; border-radius: 6px; background: #000; display: block; }
+.slide--video .quote-lg { font-size: clamp(1.3rem, 2.2vw, 1.75rem); }
+.slide-text { display: flex; flex-direction: column; gap: 14px; }
+
+.slider-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 24px; }
+.slider-btn {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line-dark); background: transparent; color: var(--white);
+  display: grid; place-items: center; cursor: pointer; transition: background .2s, border-color .2s;
+}
+.slider-btn:hover { background: var(--blue); border-color: var(--blue); }
+.dots { display: flex; gap: 8px; }
+.dots button { width: 10px; height: 10px; border-radius: 10px; border: 0; padding: 0; background: rgba(255,255,255,.25); cursor: pointer; transition: width .3s var(--ease), background .3s; }
+.dots button[aria-selected="true"] { width: 28px; background: var(--green); }
+@media (prefers-reduced-motion: reduce) { .slide { transition: none; transform: none; } }

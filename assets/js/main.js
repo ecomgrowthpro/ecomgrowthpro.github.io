@@ -97,6 +97,64 @@ const SITE = {
     Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) obs.observe(s); });
   }
 
+  /* Reviews slideshow: arrows, dots, swipe, keyboard; auto-advances every 7s,
+     pauses on hover/focus, while a video plays, and for reduced-motion users. */
+  document.querySelectorAll("[data-slider]").forEach(function (slider) {
+    var slides = slider.querySelectorAll(".slide");
+    var dotsWrap = slider.querySelector(".dots");
+    if (!slides.length) return;
+    var current = 0, timer = null, paused = false;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var dots = Array.prototype.map.call(slides, function (s, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", "Review " + (i + 1) + " of " + slides.length);
+      b.addEventListener("click", function () { go(i); restart(); });
+      dotsWrap.appendChild(b); return b;
+    });
+
+    function go(i) {
+      var next = (i + slides.length) % slides.length;
+      if (next === current && slides[current].classList.contains("is-active")) return;
+      slides[current].classList.remove("is-active");
+      slides[current].querySelectorAll("video").forEach(function (v) { v.pause(); });
+      current = next;
+      slides.forEach(function (s, k) { s.setAttribute("aria-hidden", String(k !== current)); });
+      slides[current].classList.add("is-active");
+      dots.forEach(function (d, k) { d.setAttribute("aria-selected", String(k === current)); });
+    }
+    function restart() {
+      clearInterval(timer);
+      if (reduce) return;
+      timer = setInterval(function () { if (!paused) go(current + 1); }, 7000);
+    }
+
+    slider.querySelector("[data-prev]").addEventListener("click", function () { go(current - 1); restart(); });
+    slider.querySelector("[data-next]").addEventListener("click", function () { go(current + 1); restart(); });
+    slider.addEventListener("mouseenter", function () { paused = true; });
+    slider.addEventListener("mouseleave", function () { paused = false; });
+    slider.addEventListener("focusin", function () { paused = true; });
+    slider.addEventListener("focusout", function () { paused = false; });
+    slider.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { go(current - 1); restart(); }
+      if (e.key === "ArrowRight") { go(current + 1); restart(); }
+    });
+    slider.querySelectorAll("video").forEach(function (v) {
+      v.addEventListener("play", function () { paused = true; clearInterval(timer); });
+    });
+    var startX = null;
+    slider.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { go(current + (dx < 0 ? 1 : -1)); restart(); }
+      startX = null;
+    });
+
+    go(0); restart();
+  });
+
   /* Contact form: validates, then opens email or WhatsApp with the message filled in.
      No server needed, so it works on GitHub Pages. */
   var form = document.getElementById("contact-form");
