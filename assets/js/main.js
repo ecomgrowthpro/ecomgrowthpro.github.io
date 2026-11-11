@@ -7,7 +7,8 @@ const SITE = {
   email: "extraordinaryexpert45@gmail.com", // your business email
   whatsapp: "2348142834890",                // WhatsApp number, country code first, digits only
   whatsappDisplay: "+234 814 283 4890",     // how the number is shown on the page
-  fiverr: "https://www.fiverr.com/etsy_growth_pro"  // your Fiverr profile
+  fiverr: "https://www.fiverr.com/etsy_growth_pro", // your Fiverr profile
+  tiktok: "https://www.tiktok.com/@growwithjoshua1"  // your TikTok profile
 };
 
 (function () {
