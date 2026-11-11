@@ -962,3 +962,8 @@ h3 { letter-spacing: -0.015em; }
 .tv-sound { white-space: nowrap; } @media (max-width: 480px) { .tv-sound { padding: 11px 18px; font-size: .92rem; } }
 .logo img { width: 36px; height: 36px; } .footer-logo { width: 220px; }
 .logo i { color: var(--gold-soft); }
+
+/* Mobile: no white area when scrolling past the footer (overscroll / bounce) */
+html { background: #091425; overscroll-behavior-y: none; }
+body { background: var(--ivory); overflow-x: hidden; }
+@supports (overflow: clip) { body { overflow-x: clip; } }
