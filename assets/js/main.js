@@ -9,7 +9,8 @@ const SITE = {
   whatsappDisplay: "+234 814 283 4890",     // how the number is shown on the page
   whatsappLink: "https://wa.link/qh3wzp",   // link used by every WhatsApp button (opens your chat directly)
   fiverr: "https://www.fiverr.com/etsy_growth_pro", // your Fiverr profile
-  tiktok: "https://www.tiktok.com/@growwithjoshua1"  // your TikTok profile
+  tiktok: "https://www.tiktok.com/@growwithjoshua1", // your TikTok profile
+  calendly: "https://calendly.com/extraordinaryexpert45/growwithjoshua-meeting" // your booking page
 };
 
 (function () {
@@ -30,6 +31,9 @@ const SITE = {
     el.href = SITE.fiverr;
     el.target = "_blank";
     el.rel = "noopener";
+  });
+  document.querySelectorAll("[data-calendly]").forEach(function (el) {
+    el.href = SITE.calendly; el.target = "_blank"; el.rel = "noopener";
   });
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
@@ -167,7 +171,9 @@ const SITE = {
     var method = a.hasAttribute("data-whatsapp") || href.indexOf("wa.me") !== -1 || href.indexOf("wa.link") !== -1 ? "whatsapp"
       : a.hasAttribute("data-fiverr") || href.indexOf("fiverr.com") !== -1 ? "fiverr"
       : a.hasAttribute("data-email") || href.indexOf("mailto:") === 0 ? "email"
-      : href.indexOf("tiktok.com") !== -1 ? "tiktok" : null;
+      : href.indexOf("tiktok.com") !== -1 ? "tiktok"
+      : href.indexOf("calendly.com") !== -1 ? "calendly" : null;
+    if (method === "calendly") track("generate_lead", { method: "book_call" });
     if (method) track("contact_click", { method: method, link_location: a.className || a.closest("footer, header, main, aside") && a.closest("footer, header, main, aside").tagName.toLowerCase() });
   });
   document.querySelectorAll("video").forEach(function (v) {
