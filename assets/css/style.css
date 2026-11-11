@@ -975,3 +975,6 @@ body { background: var(--ivory); overflow-x: hidden; }
 .mobile-menu .btn { margin-top: 20px; padding: 13px 20px; font-size: .95rem; }
 .mobile-menu .m-contact { padding-top: 20px; font-size: .9rem; }
 .mobile-menu .text-link { color: var(--gold-soft); }
+.mobile-menu a.m-link { font-size: .98rem; padding: 11px 4px; }
+.mobile-menu .btn { margin-top: 16px; padding: 12px 18px; font-size: .92rem; }
+.menu-toggle { padding: 8px 12px; font-size: .85rem; }
