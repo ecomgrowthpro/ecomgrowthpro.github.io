@@ -177,6 +177,7 @@ const SITE = {
     if (method) track("contact_click", { method: method, link_location: a.className || a.closest("footer, header, main, aside") && a.closest("footer, header, main, aside").tagName.toLowerCase() });
   });
   document.querySelectorAll("video").forEach(function (v) {
+    if (v.closest("[data-autoplay-video]")) return;
     var name = (v.querySelector("source") || {}).src || "video";
     name = name.split("/").pop();
     var started = false;
@@ -184,6 +185,39 @@ const SITE = {
       if (started) return; started = true;
       track("video_play", { video_name: name });
     });
+  });
+
+  /* Client testimonial: autoplays muted when on screen (browsers block sound
+     until the visitor taps), with a button that turns sound on and restarts it. */
+  document.querySelectorAll("[data-autoplay-video]").forEach(function (box) {
+    var v = box.querySelector("video");
+    var btn = box.querySelector(".tv-sound");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var userPaused = false;
+    v.muted = true;
+
+    btn.addEventListener("click", function () {
+      v.muted = false; v.loop = false; v.controls = true;
+      v.currentTime = 0;
+      box.classList.add("is-unmuted");
+      userPaused = false;
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      track("video_play", { video_name: "client-testimonial.mp4", with_sound: true });
+    });
+    v.addEventListener("pause", function () { if (box.classList.contains("is-unmuted") && !v.ended) userPaused = true; });
+    v.addEventListener("play", function () { userPaused = false; });
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            if (!reduce && !userPaused && v.paused && !v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          } else if (!v.paused) {
+            v.pause(); userPaused = false;
+          }
+        });
+      }, { threshold: 0.5 }).observe(box);
+    }
   });
 
   /* Contact form: validates, then opens email or WhatsApp with the message filled in.
