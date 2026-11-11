@@ -155,6 +155,30 @@ const SITE = {
     go(0); restart();
   });
 
+  /* Analytics: record contact clicks, form sends and video plays in Google Analytics */
+  function track(name, params) {
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    var method = a.hasAttribute("data-whatsapp") || href.indexOf("wa.me") !== -1 ? "whatsapp"
+      : a.hasAttribute("data-fiverr") || href.indexOf("fiverr.com") !== -1 ? "fiverr"
+      : a.hasAttribute("data-email") || href.indexOf("mailto:") === 0 ? "email"
+      : href.indexOf("tiktok.com") !== -1 ? "tiktok" : null;
+    if (method) track("contact_click", { method: method, link_location: a.className || a.closest("footer, header, main, aside") && a.closest("footer, header, main, aside").tagName.toLowerCase() });
+  });
+  document.querySelectorAll("video").forEach(function (v) {
+    var name = (v.querySelector("source") || {}).src || "video";
+    name = name.split("/").pop();
+    var started = false;
+    v.addEventListener("play", function () {
+      if (started) return; started = true;
+      track("video_play", { video_name: name });
+    });
+  });
+
   /* Contact form: validates, then opens email or WhatsApp with the message filled in.
      No server needed, so it works on GitHub Pages. */
   var form = document.getElementById("contact-form");
@@ -194,6 +218,7 @@ const SITE = {
       e.preventDefault();
       if (!validate()) return;
       var via = e.submitter && e.submitter.value === "whatsapp" ? "whatsapp" : "email";
+      track("generate_lead", { method: "contact_form_" + via });
       var body = buildMessage();
       if (via === "whatsapp") {
         window.open("https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(body), "_blank", "noopener");
