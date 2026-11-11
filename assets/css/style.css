@@ -960,3 +960,5 @@ h3 { letter-spacing: -0.015em; }
 .testimonial-text .stars { font-size: 1.2rem; display: block; margin-bottom: 14px; }
 .testimonial-text .btn-row { margin-top: 28px; }
 .tv-sound { white-space: nowrap; } @media (max-width: 480px) { .tv-sound { padding: 11px 18px; font-size: .92rem; } }
+.logo img { width: 36px; height: 36px; } .footer-logo { width: 220px; }
+.logo i { color: var(--gold-soft); }
