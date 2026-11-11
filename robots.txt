@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ecomgrowthpro.github.io/sitemap.xml
+Sitemap: https://growwithjoshua.online/sitemap.xml
