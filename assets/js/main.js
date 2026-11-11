@@ -7,6 +7,7 @@ const SITE = {
   email: "extraordinaryexpert45@gmail.com", // your business email
   whatsapp: "2348142834890",                // WhatsApp number, country code first, digits only
   whatsappDisplay: "+234 814 283 4890",     // how the number is shown on the page
+  whatsappLink: "https://wa.link/qh3wzp",   // link used by every WhatsApp button (opens your chat directly)
   fiverr: "https://www.fiverr.com/etsy_growth_pro", // your Fiverr profile
   tiktok: "https://www.tiktok.com/@growwithjoshua1"  // your TikTok profile
 };
@@ -20,7 +21,7 @@ const SITE = {
     if (el.hasAttribute("data-show")) el.textContent = SITE.email;
   });
   document.querySelectorAll("[data-whatsapp]").forEach(function (el) {
-    el.href = "https://wa.me/" + SITE.whatsapp;
+    el.href = SITE.whatsappLink;
     el.target = "_blank";
     el.rel = "noopener";
     if (el.hasAttribute("data-show")) el.textContent = SITE.whatsappDisplay;
@@ -163,7 +164,7 @@ const SITE = {
     var a = e.target.closest("a");
     if (!a) return;
     var href = a.getAttribute("href") || "";
-    var method = a.hasAttribute("data-whatsapp") || href.indexOf("wa.me") !== -1 ? "whatsapp"
+    var method = a.hasAttribute("data-whatsapp") || href.indexOf("wa.me") !== -1 || href.indexOf("wa.link") !== -1 ? "whatsapp"
       : a.hasAttribute("data-fiverr") || href.indexOf("fiverr.com") !== -1 ? "fiverr"
       : a.hasAttribute("data-email") || href.indexOf("mailto:") === 0 ? "email"
       : href.indexOf("tiktok.com") !== -1 ? "tiktok" : null;
