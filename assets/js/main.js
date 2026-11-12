@@ -220,6 +220,24 @@ const SITE = {
     }
   });
 
+  /* Floating "Contact me" button: opens a small menu of contact options */
+  document.querySelectorAll("[data-contact-fab]").forEach(function (fab) {
+    var btn = fab.querySelector(".cf-button");
+    var panel = fab.querySelector(".cf-panel");
+    var label = fab.querySelector(".cf-label");
+    function setOpen(open) {
+      fab.classList.toggle("is-open", open);
+      panel.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+      label.textContent = open ? "Close" : "Contact me";
+      if (open) { track("contact_menu_open", {}); var first = panel.querySelector("a"); if (first) first.focus(); }
+    }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); setOpen(panel.hidden); });
+    document.addEventListener("click", function (e) { if (!panel.hidden && !fab.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { setOpen(false); btn.focus(); } });
+    panel.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+  });
+
   /* Contact form: validates, then opens email or WhatsApp with the message filled in.
      No server needed, so it works on GitHub Pages. */
   var form = document.getElementById("contact-form");
