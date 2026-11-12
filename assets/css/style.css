@@ -1027,3 +1027,4 @@ img.fi-dot { width: 36px; height: 36px; border-radius: 50%; display: block; }
   .contact-fab { right: 14px; bottom: 14px; }
   .cf-button { height: 50px; padding: 0 18px 0 15px; font-size: .92rem; }
 }
+.cf-icon--tt { background: #000; color: #fff; box-shadow: -2px -1px 0 #25F4EE, 2px 1px 0 #FE2C55; }
