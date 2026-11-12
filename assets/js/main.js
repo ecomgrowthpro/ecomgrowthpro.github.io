@@ -238,6 +238,29 @@ const SITE = {
     panel.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
   });
 
+  /* Language picker: opens the page translated by Google Translate.
+     Works on a static site without any plugins. */
+  (function () {
+    var HOST = "growwithjoshua.online";
+    var proxy = HOST.replace(/-/g, "--").replace(/\./g, "-") + ".translate.goog";
+    var onProxy = location.hostname === proxy;
+    var params = new URLSearchParams(location.search);
+    var current = onProxy ? (params.get("_x_tr_tl") || "en") : "en";
+    document.querySelectorAll("[data-lang]").forEach(function (sel) {
+      if ([].some.call(sel.options, function (o) { return o.value === current; })) sel.value = current;
+      var code = sel.parentNode.querySelector("[data-lang-code]");
+      if (code) code.textContent = current.split("-")[0].toUpperCase();
+      sel.addEventListener("change", function () {
+        var lang = sel.value;
+        track("language_select", { language: lang });
+        var path = location.pathname + location.hash;
+        if (lang === "en") { location.href = "https://" + HOST + path; return; }
+        location.href = "https://" + proxy + location.pathname +
+          "?_x_tr_sl=en&_x_tr_tl=" + encodeURIComponent(lang) + "&_x_tr_hl=" + encodeURIComponent(lang) + "&_x_tr_pto=wapp" + location.hash;
+      });
+    });
+  })();
+
   /* Contact form: validates, then opens email or WhatsApp with the message filled in.
      No server needed, so it works on GitHub Pages. */
   var form = document.getElementById("contact-form");
