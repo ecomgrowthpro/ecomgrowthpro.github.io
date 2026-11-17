@@ -265,6 +265,13 @@ const SITE = {
      No server needed, so it works on GitHub Pages. */
   var form = document.getElementById("contact-form");
   if (form) {
+    /* Pre-tick a service when arriving from a link like contact.html?service=ads */
+    var svc = new URLSearchParams(location.search).get("service");
+    var svcMap = { review: "Free store review", ads: "Ads (Meta, TikTok, Google, Pinterest, Etsy)", klaviyo: "Klaviyo email flows" };
+    if (svc && svcMap[svc]) {
+      var box = form.querySelector('input[name="services"][value="' + svcMap[svc] + '"]');
+      if (box) box.checked = true;
+    }
     var status = document.getElementById("form-status");
     var required = form.querySelectorAll("[required]");
 
