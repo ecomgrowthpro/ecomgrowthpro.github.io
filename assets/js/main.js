@@ -297,6 +297,7 @@ const SITE = {
         d.get("store") ? "Store: " + d.get("store") : null,
         "Platform: " + (d.get("platform") || "Not sure yet"),
         services.length ? "Interested in: " + services.join(", ") : null,
+        "Monthly budget: " + (d.get("budget") || "Not given"),
         "",
         d.get("message")
       ];
